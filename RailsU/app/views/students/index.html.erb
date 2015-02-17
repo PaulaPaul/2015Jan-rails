@@ -1,31 +1,39 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Courses</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <%= form_tag("/students/", method: "get") %>
+      <%= label_tag(:findname, "Find by name:") %>
+      <%= text_field_tag(:findname) %>
+      <%= submit_tag("Search") %>
+    </div>
+    <table class="table">
+      <thead>
+        <tr class="row">
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Enrollment Date</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @students.each do |student| %>
+        <tr class="row">
+          <td><%= student.last_name %></td>
+          <td><%= student.first_name %></td>
+          <td><%= student.enrollment_date %></td>
+          <td><%= link_to 'Show', student %></td>
+          <td><%= link_to 'Edit', edit_student_path(student) %></td>
+          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer"><%= link_to 'New Student', new_student_path,:class => "btn-primary btn-sm"  %>
+  </div>
+</div>
 
-<h1>Listing Students</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Last name</th>
-      <th>First name</th>
-      <th>Enrollment date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.last_name %></td>
-        <td><%= student.first_name %></td>
-        <td><%= student.enrollment_date %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Student', new_student_path %>
