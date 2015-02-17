@@ -1,0 +1,5 @@
+rails g scaffold Instructor last_name:string  first_name:string  hire_date:date
+rails g scaffold Student last_name:string  first_name:string  enrollment_date:date
+rails g scaffold Department name:string  budget:float  start_date:date  instructor_id:integer
+rails g scaffold Course number:integer  title:string  credits:integer  department_id:integer
+rails g scaffold Enrollment grade:string  student_id:integer  course_id:integer
