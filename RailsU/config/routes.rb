@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'courses#index'
-  
-  get 'pages/home'
+  # examples below illustrate defaults - convention
+  get 'pages/home', to: 'pages#home'
 
   get 'pages/about'
 
