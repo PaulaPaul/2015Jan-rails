@@ -1,4 +1,5 @@
 class MarblesController < ApplicationController
+  before_action :authenticate_person!
   before_action :set_marble, only: [:show, :edit, :update, :destroy]
 
   # GET /marbles
@@ -15,10 +16,12 @@ class MarblesController < ApplicationController
   # GET /marbles/new
   def new
     @marble = Marble.new
+    @people = Person.all
   end
 
   # GET /marbles/1/edit
   def edit
+    @people = Person.all
   end
 
   # POST /marbles
