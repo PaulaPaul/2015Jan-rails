@@ -1,5 +1,5 @@
 <h1>Rails ATM</h1>
-<p>Enter amounts for deposit or withdrawal, or requst your balance:</p>
+<p>Enter amounts for deposit or withdrawal, or request your balance:</p>
 <table>
   <thead>
     <tr>
@@ -10,25 +10,27 @@
     <tr>
       <td>
         <%= form_tag("/atm/home", method: "post") do %>
-        <%= label_tag(:d_amount, "amount") %>
+        <%= label_tag(:d_amount, "deposit amount") %>
         <%= text_field_tag(:d_amount) %>	
         <%= hidden_field_tag(:atmaction, value = "deposit", options = {}) %>
         <%= submit_tag("Deposit") %> 
-      <% end %>
+        <% end %>
       </td>
       <td>
         <%= form_tag("/atm/home", method: "post") do %>
-        <%= label_tag(:w_amount, "amount") %>
+        <%= label_tag(:w_amount, "withdrawal amount") %>
         <%= text_field_tag(:w_amount) %>	
         <%= hidden_field_tag(:atmaction, value = "withdraw", options = {}) %>
         <%= submit_tag("Withdraw") %> 
-      <% end %>
+        <% end %>
       </td>
       <td>
         <%= form_tag("/atm/home", method: "post") do %>
+        <%= label_tag(:placeholder, "Click below to see your balance") %>	
+        <%= text_field_tag('placeholder', value = '', options = {:disabled => true}) %>	
         <%= hidden_field_tag(:atmaction, value = "balance", options = {}) %>
         <%= submit_tag("Check Balance") %> 
-      <% end %>
+        <% end %>
       </td>
     </tr>
     <tr>
