@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'atm/home'
   
   post 'atm/home'
+  
+  get 'atm/locations'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

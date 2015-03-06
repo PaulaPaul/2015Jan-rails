@@ -1,3 +1,2 @@
-/oauthy/config/application.yml
-/oauthy/config/secrets.yml
 /oauthy2/config/secrets.yml
+/RailsATM/config/secrets.yml

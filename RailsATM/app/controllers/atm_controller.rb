@@ -1,4 +1,8 @@
 class AtmController < ApplicationController
+  
+  def locations
+  end
+  
   def home
     atmaction = params[:atmaction]
     @balance = RailsATM::Application.config.balance
