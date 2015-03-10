@@ -1,0 +1,26 @@
+<table class="table">
+	<tbody>
+		<tr class="row">
+			<th>name</th>
+			<th>height</th>
+			<th>mass</th>
+			<th>hair color</th>
+			<th>skin color</th>
+			<th>eye color</th>
+			<th>birth year</th>
+			<th>gender</th>
+		</tr>
+	<% @results.each do |person| %>
+		<tr class="row">
+			<td ><%= person["name"] %> </td>
+			<td ><%= person["height"] %> </td>
+			<td ><%= person["mass"] %> </td>
+			<td ><%= person["hair_color"] %> </td>
+			<td ><%= person["skin_color"] %> </td>
+			<td ><%= person["eye_color"] %> </td>
+			<td ><%= person["birth_year"] %> </td>
+			<td ><%= person["gender"] %> </td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
