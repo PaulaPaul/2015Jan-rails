@@ -12,7 +12,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @student.photo %>
+  <%= image_tag(@student.photo, :width => 200) if @student.photo.present? %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
