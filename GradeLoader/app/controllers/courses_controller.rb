@@ -3,11 +3,13 @@ class CoursesController < ApplicationController
 
   # GET /courses
   # GET /courses.json
+  # using the ISO_8859_1 encoding makes the CSV encode correctly on Windows (only...)
+  # as in, format.csv { render text: @courses.to_csv.encode!(Encoding::ISO_8859_1)}
   def index
     @courses = Course.order(:name)
     respond_to do |format|
       format.html
-      format.csv { render text: @courses.to_csv}
+      format.csv { render text: @courses.to_csv }
       format.xls
       format.json
     end    
