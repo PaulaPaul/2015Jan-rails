@@ -37,8 +37,8 @@
 </table>
 
 <%= form_tag import_assignment_grades_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import grades" %>
+  <%= file_field_tag :file %> </br>
+  <%= submit_tag "Import grades",  :class => "btn-primary btn-sm" %>
 <% end %>
 
 <br>
