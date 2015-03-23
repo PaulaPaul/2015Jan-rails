@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
+gem 'rspec-rails'
+gem 'capybara'
+gem 'poltergeist'
+
 # adding starter_generators to play with styles
 gem 'starter_generators'
 
